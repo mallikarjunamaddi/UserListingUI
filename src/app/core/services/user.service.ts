@@ -15,8 +15,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  baseURL = environment.baseURL;
-  apiURL = this.baseURL + "/user";
+  apiURL = environment.apiURL;
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
