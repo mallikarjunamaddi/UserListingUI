@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+ 
 
-const MaterialComponents = [];
+const MaterialComponents = [
+  MatTableModule,
+  MatSortModule,
+];
 
 @NgModule({
-  declarations: [MaterialComponents],
-  imports: [MaterialComponents]
+  imports: [MaterialComponents],
+  exports: [MaterialComponents],
 })
 export class MaterialModule { }
