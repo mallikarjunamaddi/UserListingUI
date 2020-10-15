@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" *ngIf="dataSource.data.length else showMessage">
   <mat-table [dataSource]="dataSource" matSort>
 
     <!-- Name Column -->
@@ -35,5 +35,16 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
    
   </mat-table>
-
 </div>
+
+ <!-- When there is no user data or data is loading. -->
+ <ng-template #showMessage>
+  <div id="no-data" *ngIf="noDataFound else showSpinner">
+    <h2>Ah!!..No User Data Found.</h2>
+  </div>
+  <ng-template #showSpinner>
+      <div id="spinner-container">
+          <mat-spinner></mat-spinner>
+      </div>
+  </ng-template>
+</ng-template>
