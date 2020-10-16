@@ -20,14 +20,22 @@ export class DialogComponent implements OnInit {
   }
 
   saveUser(userForm: NgForm) {
-    if(userForm.valid) {
-      this.userService.AddUser(this.data.user).subscribe((response) => {
+    if(userForm.valid && this.data.user.id) {
+      this.userService.editUser(this.data.user).subscribe((response) => {
         if(response) {
           window.location.reload();
         }
       }, (error) => {
         console.error(error);
       });
+    } else if(userForm.valid) {
+        this.userService.addUser(this.data.user).subscribe((response) => {
+          if(response) {
+            window.location.reload();
+          }
+        }, (error) => {
+          console.error(error);
+        });
     }
   }
 }

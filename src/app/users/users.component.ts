@@ -52,16 +52,20 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  editUser(id: number) {
-    console.log(id);
-  }
-
-  addUser() {
-    let user = new User();
-    user.status= "Pending";
+  addOrEditUser(user: User) {
+    let userObj: User;
+    let dialogTitle: string;
+    if(user) {
+      userObj = user;
+      dialogTitle = "Edit user";
+    } else {
+      userObj = new User();
+      dialogTitle = "Add user";
+      userObj.status = "Pending";
+    }
     let data: DialogModel = {
-      dialogTitle: 'Add user',
-      user: user
+      dialogTitle: dialogTitle,
+      user: userObj
     }
 
     let dialogRef = this.matDialog.open(DialogComponent, {data: data});
