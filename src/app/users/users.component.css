@@ -1,3 +1,7 @@
+.container {
+    overflow-y: scroll;
+    max-height: 70vh;
+}
 mat-header-cell {
     font-size: 1em;
     color: black;
