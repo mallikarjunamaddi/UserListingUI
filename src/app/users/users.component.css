@@ -101,8 +101,11 @@ button:active, #edit-icon:active {
     outline: none;
 }
 
-
 #add-icon {
     width: 0.9vw;
     padding-right: 0.5vw;
+}
+
+.status-icon {
+    padding-right: 10px;
 }

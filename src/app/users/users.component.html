@@ -36,10 +36,21 @@
       <mat-cell *matCellDef="let row"> {{row.roleType}} </mat-cell>
     </ng-container>
 
-    <!-- RoleType Column -->
+    <!-- Status Column -->
     <ng-container matColumnDef="status">
         <mat-header-cell *matHeaderCellDef mat-sort-header> STATUS </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+        <mat-cell *matCellDef="let row">
+          <span *ngIf="statusList[0] === row.status" class="status-icon">
+            <img src="../assets/ico_active.svg">
+          </span>
+          <span *ngIf="statusList[1] === row.status" class="status-icon">
+            <img src="../assets/ico_pending.svg">
+          </span>
+          <span *ngIf="statusList[2] === row.status" class="status-icon">
+            <img src="../assets/ico_inactive.svg">
+          </span>
+          {{row.status}}
+           </mat-cell>
     </ng-container>
 
     <!-- Edit Column -->

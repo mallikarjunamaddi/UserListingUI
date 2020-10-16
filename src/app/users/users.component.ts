@@ -17,6 +17,7 @@ export class UsersComponent implements OnInit {
   noDataFound: boolean;
   displayedColumns: string[];
   dataSource: MatTableDataSource<User>;
+  statusList: string[];
 
   // When set {static : true}, Angular Compiler consider this @ViewChild element is static,
   // so it only obtain the MatSort one time at ngOnInit(). Even if *ngIf triggered still can't
@@ -31,6 +32,7 @@ export class UsersComponent implements OnInit {
               private matDialog: MatDialog) { 
     this.dataSource = new MatTableDataSource<User>();
     this.displayedColumns = ["name", "email", "roleType", "status", "edit"];
+    this.statusList = ["Active", "Pending", "Inactive"];
     this.getUsers();
   }
 
