@@ -18,3 +18,84 @@ mat-header-cell {
 mat-spinner {
     display: inline-block;
 }
+
+#header {
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#users-logo {
+    padding-top: 16px;
+    padding-left: 24px;
+    width: 30px;
+}
+
+#users {
+    position: relative;
+    left: 9px;
+    bottom: 9px;
+    font-size: 1.4em;
+}
+
+#header-bottom-line {
+    position: relative;
+    top: 1.5vh;
+    background-color: white;
+    border-color: #fffafa;
+}
+
+#search-container {
+    justify-self: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#search-box {
+    height: 4vh;
+    width: 20vw; 
+    margin-top: 2vh;
+}
+
+#search-icon {
+    height: 2.7vh;
+    position: relative;
+    right: 2.5vw;
+    top: 3vh;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+button:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
+}
+
+#add-btn:hover {
+    background-color: goldenrod;
+}
+
+#add-btn {
+    margin-top: 1.7vh;
+    margin-right: 1vw;
+    background-color: #FFCC00;
+    border-radius: 5%;
+    color: white;
+    height: 5.3vh;
+    width: 8vw;
+    outline: none;
+}
+
+
+#add-icon {
+    width: 0.9vw;
+    padding-right: 0.5vw;
+}

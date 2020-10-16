@@ -43,6 +43,7 @@ export class UsersComponent implements OnInit {
         this.dataSource.data = [];
       }
     }, (error) => {
+      this.noDataFound = true;
       console.error(error);
     });
   }

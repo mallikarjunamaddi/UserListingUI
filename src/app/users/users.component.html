@@ -1,4 +1,21 @@
 <div class="mat-elevation-z8" *ngIf="dataSource.data.length else showMessage">
+  
+  <div id="header"> 
+    <div id="users-container">
+      <img id="users-logo" src="../assets/ico_users.svg"> 
+      <span id="users">Users</span>
+    </div>
+    <div id="search-container">
+        <input id="search-box" type="text" [(ngModel)]="dataSource.filter" placeholder="Search">
+        <img id="search-icon" src="../assets/ico_search.svg">
+        <button id="add-btn">
+          <span><img id="add-icon" src="../assets/ico_add.svg">Add User</span>
+        </button>
+    </div>
+  </div>
+
+  <hr id="header-bottom-line">
+
   <mat-table [dataSource]="dataSource" matSort>
 
     <!-- Name Column -->
