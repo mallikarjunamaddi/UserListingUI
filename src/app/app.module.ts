@@ -10,12 +10,14 @@ import { MaterialModule } from './material/material.module';
 import { UsersComponent } from './users/users.component';
 import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
+import { WorkInprogressComponent } from './work-inprogress/work-inprogress.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    DialogComponent
+    DialogComponent,
+    WorkInprogressComponent
   ],
   imports: [
     BrowserModule,
