@@ -25,9 +25,11 @@
             <span *ngIf="adminRole.invalid && exeRole.invalid">Role is required.</span>
         </div>
         
-        <div class="form-item">
+        <div class="form-item" [class.has-error]="mobileNumber.invalid">
             <input class="text-input" type="text" name="mobileNumber" 
-                   placeholder="Mobile Number (Optional)">
+                   placeholder="Mobile Number (Optional)" [(ngModel)]="data.user.mobileNumber" 
+                   #mobileNumber="ngModel" [pattern]="phonePattern">
+            <span *ngIf="mobileNumber.invalid">Phone No. pattern is ###-###-####</span>
         </div>
     </mat-dialog-content>
     <mat-dialog-actions>

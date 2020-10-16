@@ -12,9 +12,13 @@ import { UserService } from '../core/services/user.service';
 })
 export class DialogComponent implements OnInit {
 
+  phonePattern: RegExp;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: DialogModel, 
-    private userService: UserService) { }
+    private userService: UserService) {
+      this.phonePattern = new RegExp('^[0-9]{3}-[0-9]{3}-[0-9]{4}$');
+    }
 
   ngOnInit(): void {
   }
