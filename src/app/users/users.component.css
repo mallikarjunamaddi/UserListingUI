@@ -1,3 +1,6 @@
+.mat-elevation-z8 {
+    background-color: white !important;
+}
 .container {
     overflow-y: scroll;
     max-height: 70vh;
