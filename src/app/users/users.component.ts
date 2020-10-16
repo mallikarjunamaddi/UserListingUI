@@ -47,4 +47,9 @@ export class UsersComponent implements OnInit {
       console.error(error);
     });
   }
+
+  editUser(id: number) {
+    console.log(id);
+
+  }
 }

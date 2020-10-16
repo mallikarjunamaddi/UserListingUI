@@ -74,7 +74,7 @@ button{
     font-size: 13px;
 }
 
-button:active {
+button:active, #edit-icon:active {
   box-shadow: 0 2px #666;
   transform: translateY(1px);
 }

@@ -45,7 +45,9 @@
     <!-- Edit Column -->
     <ng-container matColumnDef="edit">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.id}}</mat-cell>
+        <mat-cell *matCellDef="let row">
+          <img id="edit-icon" src="../assets/ico_edit.svg" (click)="editUser(row.id)">
+        </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
