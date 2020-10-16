@@ -8,7 +8,7 @@
     <div id="search-container">
         <input id="search-box" type="text" [(ngModel)]="dataSource.filter" placeholder="Search">
         <img id="search-icon" src="../assets/ico_search.svg">
-        <button id="add-btn">
+        <button id="add-btn" (click)="addUser()">
           <span><img id="add-icon" src="../assets/ico_add.svg">Add User</span>
         </button>
     </div>

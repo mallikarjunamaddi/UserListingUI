@@ -1,0 +1,36 @@
+<img id="close-icon" src="../assets/ico_close.svg" mat-dialog-close>
+<form id="dialog-form" #userForm="ngForm" (ngSubmit)="saveUser(userForm)">
+    <h2 mat-dialog-title>{{data.dialogTitle}}</h2>
+    <mat-dialog-content>
+        
+        <div class="form-item" [class.has-error]="userName.invalid">
+            <input class="text-input required" type="text" [(ngModel)]="data.user.name" 
+                   name="name" placeholder="Name" required #userName="ngModel">
+            <span *ngIf="userName.invalid">Name is required.</span>
+        </div>
+
+        <div class="form-item">
+            <input class="text-input" type="text" [(ngModel)]="data.user.email" 
+                   name="email" placeholder="Email">
+        </div>
+
+        <div class=form-item [class.has-error]="adminRole.invalid && exeRole.invalid">
+            <span id="roletype-container">
+                <input class="radio-input" type="radio" [(ngModel)]="data.user.roleType"
+                       name="roleType" value="Admin" required #adminRole="ngModel"> Admin
+                <input class="radio-input" type="radio" [(ngModel)]="data.user.roleType"
+                       name="roleType" value="Customer Executive" required #exeRole="ngModel"> 
+                       Customer Executive
+            </span>
+            <span *ngIf="adminRole.invalid && exeRole.invalid">Role is required.</span>
+        </div>
+        
+        <div class="form-item">
+            <input class="text-input" type="text" name="mobileNumber" 
+                   placeholder="Mobile Number (Optional)">
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button id="add-btn" mat-dialog-close [disabled]="userForm.invalid" type="submit">ADD USER</button>
+    </mat-dialog-actions>
+</form>

@@ -36,4 +36,8 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiURL).pipe(catchError(this.handleError));
   }
+
+  AddUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiURL, user).pipe(catchError(this.handleError));
+  }
 }

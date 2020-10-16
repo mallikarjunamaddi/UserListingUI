@@ -9,11 +9,13 @@ import { CoreModule } from './core/core.module';
 import { MaterialModule } from './material/material.module';
 import { UsersComponent } from './users/users.component';
 import { FormsModule } from '@angular/forms';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }

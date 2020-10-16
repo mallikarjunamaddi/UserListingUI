@@ -1,9 +1,12 @@
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { User } from '../core/models/user';
+import { DialogModel } from '../core/models/DialogModel';
 import { UserService } from '../core/services/user.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-users',
@@ -24,7 +27,8 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  constructor(private userService: UserService) { 
+  constructor(private userService: UserService,
+              private matDialog: MatDialog) { 
     this.dataSource = new MatTableDataSource<User>();
     this.displayedColumns = ["name", "email", "roleType", "status", "edit"];
     this.getUsers();
@@ -50,6 +54,17 @@ export class UsersComponent implements OnInit {
 
   editUser(id: number) {
     console.log(id);
+  }
 
+  addUser() {
+    let user = new User();
+    user.status= "Pending";
+    let data: DialogModel = {
+      dialogTitle: 'Add user',
+      user: user
+    }
+
+    let dialogRef = this.matDialog.open(DialogComponent, {data: data});
+    dialogRef.afterClosed().subscribe();
   }
 }
