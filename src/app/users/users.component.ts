@@ -8,6 +8,7 @@ import { DialogModel } from '../core/models/DialogModel';
 import { UserService } from '../core/services/user.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-users',
@@ -69,7 +70,7 @@ export class UsersComponent implements OnInit {
     } else {
       userObj = new User();
       dialogTitle = "Add user";
-      userObj.status = "Pending";
+      userObj.status = environment.defaultStatus;
     }
     let data: DialogModel = {
       dialogTitle: dialogTitle,

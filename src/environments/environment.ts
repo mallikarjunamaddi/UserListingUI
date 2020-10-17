@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   baseURL: "http://localhost:53895",
-  apiURL: "http://localhost:53895/api/users"
+  apiURL: "http://localhost:53895/api/users",
+  defaultStatus: "Pending"
 };
 
 /*
