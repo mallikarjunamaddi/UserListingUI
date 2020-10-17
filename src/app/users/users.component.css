@@ -2,8 +2,8 @@
     background-color: white !important;
 }
 .container {
-    overflow-y: scroll;
-    max-height: 70vh;
+    overflow-y: auto;
+    max-height: 60vh;
 }
 mat-header-cell {
     font-size: 1em;
@@ -109,3 +109,4 @@ button:active, #edit-icon:active {
 .status-icon {
     padding-right: 10px;
 }
+

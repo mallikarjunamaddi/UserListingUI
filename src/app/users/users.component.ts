@@ -7,6 +7,7 @@ import { User } from '../core/models/user';
 import { DialogModel } from '../core/models/DialogModel';
 import { UserService } from '../core/services/user.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-users',
@@ -28,6 +29,11 @@ export class UsersComponent implements OnInit {
     }
   }
 
+  @ViewChild(MatPaginator, {static: false}) set paginator(paginator: MatPaginator) {
+    if (paginator){
+      this.dataSource.paginator = paginator;
+    }
+  }
   constructor(private userService: UserService,
               private matDialog: MatDialog) { 
     this.dataSource = new MatTableDataSource<User>();
