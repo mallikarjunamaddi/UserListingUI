@@ -13,10 +13,11 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
-
   apiURL = environment.apiURL;
 
+  constructor(private http: HttpClient) { }
+
+  // Error Handler for api requests.
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

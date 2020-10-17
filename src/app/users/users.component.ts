@@ -16,10 +16,14 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+
+  /******************* region Properties *********************/
   noDataFound: boolean;
   displayedColumns: string[];
   dataSource: MatTableDataSource<User>;
   statusList: string[];
+  /******************* endregion Properties ******************/
+
 
   // When set {static : true}, Angular Compiler consider this @ViewChild element is static,
   // so it only obtain the MatSort one time at ngOnInit(). Even if *ngIf triggered still can't
@@ -35,6 +39,7 @@ export class UsersComponent implements OnInit {
       this.dataSource.paginator = paginator;
     }
   }
+
   constructor(private userService: UserService,
               private matDialog: MatDialog) { 
     this.dataSource = new MatTableDataSource<User>();

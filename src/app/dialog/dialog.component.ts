@@ -23,6 +23,7 @@ export class DialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Generates an Email based on user name.
   generateEmail() {
     let name = this.data.user.name;
     if(name) {
@@ -37,6 +38,7 @@ export class DialogComponent implements OnInit {
     }
   }
 
+  // Create or Update the User
   saveUser(userForm: NgForm) {
     if(userForm.valid && this.data.user.id) {
       this.userService.editUser(this.data.user).subscribe((response) => {
