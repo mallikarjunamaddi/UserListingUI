@@ -5,7 +5,8 @@
         
         <div class="form-item" [class.has-error]="userName.invalid">
             <input class="text-input required" type="text" [(ngModel)]="data.user.name" 
-                   name="name" placeholder="Name" required #userName="ngModel">
+                   name="name" placeholder="Name" required #userName="ngModel"
+                   (keyup)="generateEmail()">
             <span *ngIf="userName.invalid">Name is required.</span>
         </div>
 

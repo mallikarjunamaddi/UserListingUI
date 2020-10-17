@@ -23,6 +23,20 @@ export class DialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  generateEmail() {
+    let name = this.data.user.name;
+    if(name) {
+      this.userService.generateEmail(name).subscribe((response) => {
+        this.data.user.email = response;
+        console.log(this.data.user.email);
+      }, (error) => {
+        console.error(error);
+      });
+    } else {
+      this.data.user.email = null;
+    }
+  }
+
   saveUser(userForm: NgForm) {
     if(userForm.valid && this.data.user.id) {
       this.userService.editUser(this.data.user).subscribe((response) => {

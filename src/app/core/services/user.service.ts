@@ -45,4 +45,8 @@ export class UserService {
     return this.http.patch<User>(this.apiURL, user).pipe(catchError(this.handleError));
   }
 
+  generateEmail(name: string): Observable<string> {
+    let endpointURL = this.apiURL + "/generateEmail/" + name;
+    return this.http.get<string>(endpointURL, {responseType: 'text' as 'json'}).pipe(catchError(this.handleError));
+  }
 }
